@@ -43,8 +43,7 @@ public class Enemy_Movement : MonoBehaviour
             boxCollider.enabled = false;
 
             //Trigger jump for the Player
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 800));
-            collision.gameObject.GetComponent<Animator>().SetBool("isJumping", true);
+            collision.gameObject.GetComponent<Player_Movement>().applyForce = true;
         }
     }
     

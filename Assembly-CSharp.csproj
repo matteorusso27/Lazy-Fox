@@ -58,8 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Button_Script.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\Collector_Script.cs" />
     <Compile Include="Assets\Scripts\Enemy_Movement.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
+    <Compile Include="Assets\Scripts\UIAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

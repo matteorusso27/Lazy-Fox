@@ -6,7 +6,8 @@ public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private float speed = 40;
-    
+
+    public bool applyForce;
     private Animator animator;
     private Rigidbody2D rig_body;
 
@@ -44,6 +45,14 @@ public class Player_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.deltaTime, isCrouching, isJumping);
+       
+        if (applyForce)
+        {
+            applyForce = false;
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 800));
+            isJumping = true;
+            animator.SetBool("isJumping", isJumping);
+        }
         isJumping = false;
         animator.SetBool("isJumping", isJumping);
     }
