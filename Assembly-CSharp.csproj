@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Button_Script.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Movement.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -595,6 +596,10 @@
       <Project>{A818B327-7869-C7C7-F57B-FCE7B128605E}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{C802D771-2C7D-F970-F9F8-74760847AAEB}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
       <Project>{BB060347-A548-52A2-7C2E-E2342EC67519}</Project>
       <Name>Unity.2D.Animation.Runtime</Name>
@@ -674,6 +679,10 @@
     <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
       <Project>{1D46EE20-6FB4-EA89-1148-83718C8F2027}</Project>
       <Name>Unity.2D.Animation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{DFD7A58F-9800-19B4-9B46-4C70F237ED05}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{1919672A-8212-16FE-4CFB-D8E98326F88E}</Project>

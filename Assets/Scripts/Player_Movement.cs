@@ -13,7 +13,6 @@ public class Player_Movement : MonoBehaviour
     private float horizontalMove = 0;
     private bool isJumping = false;
     private bool isCrouching = false;
-    private bool isFalling_No_Jump = false;
 
     void Start()
     {
@@ -39,16 +38,7 @@ public class Player_Movement : MonoBehaviour
         {
             isCrouching = false;
         }
-        
-        if(rig_body.velocity.y < -0.01f && !isJumping && !isFalling_No_Jump)
-        {
-            isFalling_No_Jump = true;
-            animator.SetBool("isFalling", true);
-        }
-        else if (rig_body.velocity.y >= 0f && isFalling_No_Jump)
-        {
-            animator.SetBool("isFalling",false);
-        }
+       
     }
 
     private void FixedUpdate()
