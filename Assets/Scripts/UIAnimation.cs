@@ -8,6 +8,7 @@ public class UIAnimation : MonoBehaviour
     [SerializeField] private Sprite[] frames;
     private int currentIndex = 0;
     private Image image;
+    [SerializeField] private float temp = 0.5f;
    private IEnumerator Idle_Movement()
     {
         while (true)
@@ -18,6 +19,7 @@ public class UIAnimation : MonoBehaviour
             }
             image.sprite = frames[currentIndex];
             currentIndex++;
+            yield return new WaitForSeconds(temp);
         }
     }
     void Start()

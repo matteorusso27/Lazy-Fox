@@ -10,14 +10,26 @@ public class Collector_Script : MonoBehaviour
     private Text CherryTextCount;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        getObject(collision.gameObject);
-        CherryCount++;
-        CherryTextCount.text = CherryCount.ToString();
+        if (collision.gameObject.CompareTag("Collectable"))
+        {
+            getObject(collision.gameObject);
+            UpdateText();
+        }
+
     }
 
     private void getObject(GameObject gameObject)
     {
+        Destroy(gameObject, 1.75f);
         gameObject.GetComponent<Animator>().SetBool("isPicked", true);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    private void UpdateText()
+    {
+       
+       CherryCount++;
+       
+       CherryTextCount.text = CherryCount.ToString();
     }
 }

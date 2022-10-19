@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
+    [SerializeField] private CircleCollider2D boxCollider;
     [SerializeField] private float speed = 40;
 
     public bool applyForce;
@@ -66,5 +67,19 @@ public class Player_Movement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("isCrouching", isCrouching);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (boxCollider.bounds.center.y < collision.collider.bounds.center.y)
+            {
+                //Trigger death
+                animator.SetBool("isDead", true);
+                rig_body.bodyType = RigidbodyType2D.Static;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 }
