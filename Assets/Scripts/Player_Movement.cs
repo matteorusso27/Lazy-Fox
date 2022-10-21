@@ -76,10 +76,20 @@ public class Player_Movement : MonoBehaviour
             if (boxCollider.bounds.center.y < collision.collider.bounds.center.y)
             {
                 //Trigger death
-                animator.SetBool("isDead", true);
-                rig_body.bodyType = RigidbodyType2D.Static;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Die();
             }
         }
+    }
+
+    private void Die()
+    {
+        animator.SetBool("isDead", true);
+        rig_body.bodyType = RigidbodyType2D.Static;
+        Invoke("RestartLevel", 2);
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
