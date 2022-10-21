@@ -15,6 +15,7 @@ public class Player_Movement : MonoBehaviour
     private float horizontalMove = 0;
     private bool isJumping = false;
     private bool isCrouching = false;
+    private bool isFalling = false;
 
     void Start()
     {
@@ -29,8 +30,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            isJumping = true;
-            animator.SetBool("isJumping", isJumping);
+            Jump();
         }
         if (Input.GetButtonDown("Crouch"))
         {
@@ -40,7 +40,15 @@ public class Player_Movement : MonoBehaviour
         {
             isCrouching = false;
         }
-       
+
+        if(rig_body.velocity.y < -0.01f)
+        {
+            isFalling = true;
+        }
+        else
+        {
+            isFalling = false;
+        }
     }
 
     private void FixedUpdate()
@@ -51,11 +59,11 @@ public class Player_Movement : MonoBehaviour
         {
             applyForce = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 800));
-            isJumping = true;
-            animator.SetBool("isJumping", isJumping);
+            Jump();
         }
         isJumping = false;
         animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isFalling", isFalling);
     }
 
     public void OnLanding()
@@ -91,5 +99,11 @@ public class Player_Movement : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void Jump()
+    {
+        isJumping = true;
+        animator.SetBool("isJumping", isJumping);
     }
 }
