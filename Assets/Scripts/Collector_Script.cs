@@ -10,12 +10,16 @@ public class Collector_Script : MonoBehaviour
     private Text CherryTextCount;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        getObject(collision.gameObject);
-
-        if (collision.gameObject.CompareTag("Cherry"))
+        if (!collision.gameObject.CompareTag("Death"))
         {
-            UpdateText();
+            getObject(collision.gameObject);
+
+            if (collision.gameObject.CompareTag("Cherry"))
+            {
+                UpdateText();
+            }
         }
+       
 
     }
 

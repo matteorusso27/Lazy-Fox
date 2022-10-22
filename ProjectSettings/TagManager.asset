@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Collectable
   - Cherry
+  - Death
+  - Opossum
+  - Eagle
   layers:
   - Default
   - TransparentFX

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private CircleCollider2D boxCollider;
     [SerializeField] private float speed = 40;
+    [SerializeField] public CinemachineVirtualCamera vcamera;
 
     public bool applyForce;
     private Animator animator;
@@ -79,20 +81,36 @@ public class Player_Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Eagle") || collision.gameObject.CompareTag("Opossum"))
         {
             if (boxCollider.bounds.center.y < collision.collider.bounds.center.y)
             {
                 //Trigger death
-                Die();
+                Die(false);
             }
         }
     }
 
-    private void Die()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        animator.SetBool("isDead", true);
-        rig_body.bodyType = RigidbodyType2D.Static;
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            Die(true);
+        }
+    }
+
+    private void Die(bool isFalling)
+    {
+        if (!isFalling)
+        {
+            animator.SetBool("isDead", true);
+            rig_body.bodyType = RigidbodyType2D.Static;
+        }
+        else
+        {
+            vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
+        }
+        
         Invoke("RestartLevel", 2);
     }
 
