@@ -60,7 +60,6 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Collector_Script.cs" />
     <Compile Include="Assets\Scripts\Eagle_Movement.cs" />
-    <Compile Include="Assets\Scripts\Opossum_Movement.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
     <Compile Include="Assets\Scripts\UpdateGemUI.cs" />
