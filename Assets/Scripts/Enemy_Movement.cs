@@ -33,27 +33,27 @@ public class Enemy_Movement : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         Movement_Coroutine = StartCoroutine(Movement());
     }
-    protected void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             if(collision.collider.bounds.center.y > boxCollider.bounds.center.y + boxCollider.bounds.extents.y)
             {
-                //Apply Force upwards to Player
-                collision.gameObject.GetComponent<Player_Movement>().applyForce = true;
-
                 //Trigger Death
                 Die();
+
+                //Apply Force upwards to Player
+                collision.gameObject.GetComponent<Player_Movement>().applyForce = true;
             }
         }
     }
 
-    protected void Die()
+    public virtual void Die()
     {
         //Change into Death animation and destroy
+        StopCoroutine(Movement_Coroutine);
         GetComponent<Animator>().SetBool("isDead", true);
         boxCollider.enabled = false;
-        StopCoroutine(Movement_Coroutine);
         Destroy(gameObject, 2f);
     }
 }

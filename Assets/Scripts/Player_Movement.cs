@@ -81,7 +81,7 @@ public class Player_Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Eagle") || collision.gameObject.CompareTag("Opossum"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (boxCollider.bounds.center.y < collision.collider.bounds.center.y)
             {

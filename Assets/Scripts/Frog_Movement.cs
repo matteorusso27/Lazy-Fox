@@ -52,7 +52,7 @@ public class Frog_Movement : Enemy_Movement
                 jump = true;
             }
             
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
     private void FixedUpdate()
@@ -88,9 +88,17 @@ public class Frog_Movement : Enemy_Movement
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .05f, ground);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
         speed_frog = -speed_frog;
         sprite.flipX = !sprite.flipX;
     }
+
+    public override void Die()
+    {
+        rig_body.bodyType = RigidbodyType2D.Static;
+        base.Die();
+    }
+
 }

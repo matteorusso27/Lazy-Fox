@@ -7,8 +7,9 @@ TagManager:
   - Collectable
   - Cherry
   - Death
+  - Enemy
   - Opossum
-  - Eagle
+  - Waypoint
   layers:
   - Default
   - TransparentFX
