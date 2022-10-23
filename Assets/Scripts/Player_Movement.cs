@@ -6,13 +6,14 @@ using Cinemachine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
-    [SerializeField] private CircleCollider2D boxCollider;
+    [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] private float speed = 40;
     [SerializeField] public CinemachineVirtualCamera vcamera;
 
     public bool applyForce;
     private Animator animator;
     private Rigidbody2D rig_body;
+    private BoxCollider2D boxCollider;
 
     private float horizontalMove = 0;
     private bool isJumping = false;
@@ -23,6 +24,7 @@ public class Player_Movement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rig_body = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -30,7 +32,7 @@ public class Player_Movement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
         animator.SetFloat("isRunning", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isCrouching && boxCollider.enabled)
         {
             Jump();
         }
@@ -83,7 +85,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (boxCollider.bounds.center.y < collision.collider.bounds.center.y)
+            if (circleCollider.bounds.center.y < collision.collider.bounds.center.y)
             {
                 //Trigger death
                 Die(false);
