@@ -179,7 +179,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5794519924615567194}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9b6f0fd057b2fd3408a976f2797babb0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -205,7 +205,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5794519924615567194}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9b6f0fd057b2fd3408a976f2797babb0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -314,7 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CherryTextCount: {fileID: 0}
-  audioPick: {fileID: 0}
 --- !u!82 &7949881248998439013
 AudioSource:
   m_ObjectHideFlags: 0

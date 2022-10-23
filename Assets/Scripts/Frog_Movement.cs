@@ -68,7 +68,7 @@ public class Frog_Movement : Enemy_Movement
         {
             currentlyJumping = true;
             anim.SetBool("isJumping", true);
-            Vector3 targetVelocity = new Vector2(speed_frog * 5f, rig_body.velocity.y + 3f);
+            Vector3 targetVelocity = new Vector2(speed_frog *Time.deltaTime* 200f, rig_body.velocity.y + 3f);
             rig_body.velocity = Vector3.Lerp(rig_body.velocity, targetVelocity,1f);
             jump = false;
         }
