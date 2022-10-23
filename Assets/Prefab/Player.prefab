@@ -295,8 +295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5794519924615567203}
-  boxCollider: {fileID: 1816419917759849422}
+  circleCollider: {fileID: 1816419917759849422}
   speed: 40
+  vcamera: {fileID: 0}
   applyForce: 0
 --- !u!114 &722216177983597718
 MonoBehaviour:
