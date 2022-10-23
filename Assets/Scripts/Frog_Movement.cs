@@ -88,9 +88,8 @@ public class Frog_Movement : Enemy_Movement
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .05f, ground);
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnCollisionEnter2D(collision);
         speed_frog = -speed_frog;
         sprite.flipX = !sprite.flipX;
     }

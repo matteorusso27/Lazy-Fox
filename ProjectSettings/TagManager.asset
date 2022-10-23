@@ -8,8 +8,8 @@ TagManager:
   - Cherry
   - Death
   - Enemy
-  - Opossum
   - Waypoint
+  - Trap
   layers:
   - Default
   - TransparentFX

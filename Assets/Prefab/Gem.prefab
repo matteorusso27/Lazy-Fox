@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8679615420926564486}
   - component: {fileID: 8679615420926564485}
   - component: {fileID: 8679615420926564488}
+  - component: {fileID: 1517416375034780645}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Collectable
@@ -128,3 +129,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72743726, y: 0.68043226}
   m_EdgeRadius: 0
+--- !u!114 &1517416375034780645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679615420926564484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d688526c5a8e8d4780f3c428179e2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GemUI: {fileID: 0}
