@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Enemy_Movement : MonoBehaviour
 {
-    [SerializeField] private GameObject[] waypoints;
-    [SerializeField] private float speed = 2.5f;
-    private BoxCollider2D boxCollider;
-    private SpriteRenderer sprite;
-    private int currentWaypointIndex = 0;
+    [SerializeField] protected GameObject[] waypoints;
+    [SerializeField] protected float speed = 2.5f;
+    protected BoxCollider2D boxCollider;
+    protected int currentWaypointIndex = 0;
 
-    Coroutine Movement_Coroutine;
+    protected Coroutine Movement_Coroutine;
 
-    IEnumerator Movement()
+    public virtual IEnumerator Movement()
     {
         while (true)
         {
@@ -23,23 +22,18 @@ public class Enemy_Movement : MonoBehaviour
                 {
                     currentWaypointIndex = 0;
                 }
-                if (CompareTag("Opossum"))
-                {
-                    sprite.flipX = !sprite.flipX;
-                }
             }
             transform.position = Vector2.MoveTowards
                                 (transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
             yield return null;
         }
     }
-    private void Start()
+    protected void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
         Movement_Coroutine = StartCoroutine(Movement());
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -54,7 +48,7 @@ public class Enemy_Movement : MonoBehaviour
         }
     }
 
-    private void Die()
+    protected void Die()
     {
         //Change into Death animation and destroy
         GetComponent<Animator>().SetBool("isDead", true);

@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eagle_Movement : MonoBehaviour
+public class Opossum_Movement : Enemy_Movement
 {
-    [SerializeField] private GameObject[] waypoints;
-    [SerializeField] private float speed = 2.5f;
-    private BoxCollider2D boxCollider;
-    private int currentWaypointIndex = 0;
+    private SpriteRenderer sprite;
 
-
-    IEnumerator Movement()
+    public override IEnumerator Movement()
     {
         while (true)
         {
@@ -21,30 +17,17 @@ public class Eagle_Movement : MonoBehaviour
                 {
                     currentWaypointIndex = 0;
                 }
+                sprite.flipX = !sprite.flipX;
             }
             transform.position = Vector2.MoveTowards
                                 (transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
             yield return null;
         }
     }
-    private void Start()
+    private new void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-        StartCoroutine(Movement());
+        sprite = GetComponent<SpriteRenderer>();
+        base.Start();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if(collision.collider.bounds.center.y > boxCollider.bounds.center.y + boxCollider.bounds.extents.y)
-            {
-                collision.gameObject.GetComponent<Player_Movement>().applyForce = true;
 
-                //Trigger Death
-                GetComponent<Animator>().SetBool("isDead", true);
-                boxCollider.enabled = false;
-                Destroy(gameObject, 2f);
-            }
-        }
-    }
 }

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1683772094880551501}
   - component: {fileID: 1683772094880551502}
   - component: {fileID: 1683772094880551503}
-  - component: {fileID: 1683772094880551496}
+  - component: {fileID: 3883120410600541185}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Opossum
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7244873, y: 1.1258225}
   m_EdgeRadius: 0
---- !u!114 &1683772094880551496
+--- !u!114 &3883120410600541185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,13 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683772094880551498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 388dc77089eaf5b47973d469b4c6ec55, type: 3}
+  m_Script: {fileID: 11500000, guid: 410a046c8f60aea47975b740e38aa122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 1683772096029374442}
   - {fileID: 1683772094546168365}
-  speed: 3
+  speed: 2.5
 --- !u!1 &1683772095978088442
 GameObject:
   m_ObjectHideFlags: 0
