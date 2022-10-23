@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Waypoint
   - Trap
+  - Gem
   layers:
   - Default
   - TransparentFX
