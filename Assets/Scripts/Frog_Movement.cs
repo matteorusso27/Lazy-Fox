@@ -10,6 +10,8 @@ public class Frog_Movement : Enemy_Movement
     private Animator anim;
     private Rigidbody2D rig_body;
 
+    [SerializeField] AudioSource frogSound;
+
     private bool grounded;
     private bool jump = false;
     private bool currentlyJumping = false;
@@ -79,6 +81,7 @@ public class Frog_Movement : Enemy_Movement
         sprite = GetComponent<SpriteRenderer>();
         rig_body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
         base.Start();
         
     }
@@ -97,6 +100,7 @@ public class Frog_Movement : Enemy_Movement
     public override void Die()
     {
         rig_body.bodyType = RigidbodyType2D.Static;
+        frogSound.Play();
         base.Die();
     }
 

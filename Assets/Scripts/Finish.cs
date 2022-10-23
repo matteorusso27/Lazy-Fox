@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
+    [SerializeField] AudioSource finalAudio;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            finalAudio.Play();
             Invoke("LoadNextLevel", 2f);
         }
     }

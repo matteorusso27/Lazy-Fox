@@ -7,6 +7,7 @@ public class Enemy_Movement : MonoBehaviour
     [SerializeField] protected GameObject[] waypoints;
     [SerializeField] protected float speed = 2.5f;
     protected BoxCollider2D boxCollider;
+    private AudioSource audioPlay;
     protected int currentWaypointIndex = 0;
 
     protected Coroutine Movement_Coroutine;
@@ -31,6 +32,7 @@ public class Enemy_Movement : MonoBehaviour
     protected void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        audioPlay = GetComponent<AudioSource>();
         Movement_Coroutine = StartCoroutine(Movement());
     }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -55,5 +57,6 @@ public class Enemy_Movement : MonoBehaviour
         GetComponent<Animator>().SetBool("isDead", true);
         boxCollider.enabled = false;
         Destroy(gameObject, 2f);
+        audioPlay.Play();
     }
 }

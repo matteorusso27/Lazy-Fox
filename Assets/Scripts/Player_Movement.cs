@@ -10,6 +10,8 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float speed = 40;
     [SerializeField] public CinemachineVirtualCamera vcamera;
 
+    [SerializeField] private AudioSource audioDeath;
+
     public bool applyForce;
     private Animator animator;
     private Rigidbody2D rig_body;
@@ -119,7 +121,7 @@ public class Player_Movement : MonoBehaviour
         {
             vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
         }
-        
+        audioDeath.Play();
         Invoke("RestartLevel", 2);
     }
 
