@@ -11,6 +11,7 @@ public class Finish : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             finalAudio.Play();
+            GetComponent<BoxCollider2D>().enabled = false;
             Invoke("LoadNextLevel", 2f);
         }
     }

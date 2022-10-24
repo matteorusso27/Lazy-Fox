@@ -90,14 +90,14 @@ public class Player_Movement : MonoBehaviour
             if (circleCollider.bounds.center.y < collision.collider.bounds.center.y)
             {
                 //Trigger death
-                Die(false);
+                Die();
             }
         }
 
         if (collision.gameObject.CompareTag("Trap"))
         {
             //Trigger death
-            Die(false);
+            Die();
         }
 
     }
@@ -106,23 +106,22 @@ public class Player_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
-            Die(true);
+            Die();
         }
     }
 
-    private void Die(bool isFalling)
+    private void Die()
     {
-        if (!isFalling)
-        {
-            animator.SetBool("isDead", true);
-            rig_body.bodyType = RigidbodyType2D.Static;
-        }
-        else
-        {
-            vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
-        }
+       
+        animator.SetBool("isDead", true);
+        boxCollider.enabled = false;
+        circleCollider.enabled = false;
+        rig_body.AddForce(new Vector2(0, 500));
+        vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
+        
         audioDeath.Play();
         Invoke("RestartLevel", 2);
+        GetComponent<Player_Movement>().enabled = false;
     }
 
     private void RestartLevel()
