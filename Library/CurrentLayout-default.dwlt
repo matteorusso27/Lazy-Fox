@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 521}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 577, y: 471}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 579, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 31980
+  controlID: 1494
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1186
     height: 731
-  m_MinSize: {x: 302, y: 471}
+  m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 31981
+  controlID: 1495
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1186
     height: 433
-  m_MinSize: {x: 302, y: 200}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 303, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 22744
+  controlID: 1496
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 253
     height: 433
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 350
     height: 731
-  m_MinSize: {x: 275, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -397,7 +397,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e077fefff677fefff877fefffc77feff3479feff4a79feff4a7afeff587afeffce7ffeffe47ffeffe680fefff280feffac87fefff88dfeff9c91fefffa93feff0ce8ffff5ee9ffffc4e9fffff6e9ffff38eaffff28ebffffb2f0ffff08f4ffffc8fafffffefaffff5afbffff523e0000c63e000052250100
+      m_ExpandedIDs: 64f9ffff5afbffff9e3e0000d03e0000ea3e00003e3f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -38.59177, y: 1.808436, z: -3.179115}
+    m_Target: {x: -12.302681, y: 5.2546573, z: -0.98276794}
     speed: 2
-    m_Value: {x: -38.59177, y: 1.808436, z: -3.179115}
+    m_Value: {x: -12.302681, y: 5.2546573, z: -0.98276794}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,9 +509,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.255958
+    m_Target: 7.4188485
     speed: 2
-    m_Value: 8.255958
+    m_Value: 7.4188485
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -575,20 +575,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 81
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scripts
   m_LastFoldersGridSize: 81
   m_LastProjectPath: C:\Users\russom\Documents\Unity_Games\Lazy Fox 2D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56440000
-    m_LastClickedID: 17494
-    m_ExpandedIDs: 0000000022430000
+    m_SelectedIDs: 3c440000
+    m_LastClickedID: 17468
+    m_ExpandedIDs: 0000000014440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -616,7 +616,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000022430000
+    m_ExpandedIDs: 0000000014440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
