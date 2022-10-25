@@ -666,12 +666,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9e92b768535b7241abbb917dd81970e, type: 3}
---- !u!82 &321288355 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7949881248998439013, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1900778323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &357948809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6439018931461054288, guid: e9e92b768535b7241abbb917dd81970e,
@@ -33086,41 +33080,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -50.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794519924615567192, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -33149,11 +33108,6 @@ PrefabInstance:
       propertyPath: vcamera
       value: 
       objectReference: {fileID: 2042361349}
-    - target: {fileID: 5794519924615567202, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4,
-        type: 3}
-      propertyPath: audioDeath
-      value: 
-      objectReference: {fileID: 321288355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98d18d8e1e0acf14c9ec3d152e5c72e4, type: 3}
 --- !u!1 &1905067917
