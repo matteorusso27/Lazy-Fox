@@ -9,6 +9,7 @@ public class Listener_Script: MonoBehaviour
     [SerializeField] bool isStart;
     private bool alreadyPressed;
     [SerializeField] Text text;
+
     private void Update()
     {
         if (!alreadyPressed)
@@ -23,13 +24,19 @@ public class Listener_Script: MonoBehaviour
                 }
                 else
                 {
-                    Application.Quit();
+                    Invoke("Quit", 1f);
+                    text.text = "Bye!";
                 }
             }
         }
     }
-    public void Start_Game()
+    private void Start_Game()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void Quit()
+    {
+        Application.Quit();
     }
 }
