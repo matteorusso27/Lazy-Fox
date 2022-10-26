@@ -8,7 +8,7 @@ public class Listener_Script: MonoBehaviour
 {
     [SerializeField] bool isStart;
     private bool alreadyPressed;
-    [SerializeField] Text text;
+    [SerializeField] GameObject text;
 
     private void Update()
     {
@@ -20,12 +20,15 @@ public class Listener_Script: MonoBehaviour
                 if (isStart)
                 {
                     Invoke("Start_Game", 1f);
-                    text.text = "Let's go";
+                    text.GetComponent<Text>().text = "Let's go";
                 }
                 else
                 {
                     Invoke("Quit", 1f);
-                    text.text = "Bye!";
+                    text.GetComponent<Text>().text = "Bye!";
+                    text.GetComponent<Text>().fontSize = 30;
+                    Vector3 oldPosition = text.GetComponent<RectTransform>().transform.position;
+                    text.GetComponent<RectTransform>().transform.position.Set(oldPosition.x,-229.3f,0f);
                 }
             }
         }

@@ -29,7 +29,6 @@ public class UITextBlinking : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("partito");
         text = GetComponent<Text>();
         BlinkTextCoroutine = StartCoroutine(BlinkText());
     }
