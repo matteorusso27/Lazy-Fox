@@ -27,7 +27,7 @@ public class Listener_Script: MonoBehaviour
                     Invoke("Quit", 1f);
                     text.GetComponent<Text>().text = "Bye!";
                     text.GetComponent<Text>().fontSize = 30;
-                    Vector3 oldPosition = text.GetComponent<RectTransform>().transform.position;
+                    Vector3 oldPosition = text.GetComponent<RectTransform>().transform.position.;
                     text.GetComponent<RectTransform>().transform.position.Set(oldPosition.x,-229.3f,0f);
                 }
             }

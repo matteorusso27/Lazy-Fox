@@ -175,7 +175,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1683772096029374442}
   - {fileID: 1683772094546168365}
-  speed: 2.5
+  speed: 4
 --- !u!82 &9098601039316051812
 AudioSource:
   m_ObjectHideFlags: 0
