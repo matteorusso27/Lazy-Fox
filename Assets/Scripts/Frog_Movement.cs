@@ -15,13 +15,15 @@ public class Frog_Movement : Enemy_Movement
     private bool grounded;
     private bool jump = false;
     private bool currentlyJumping = false;
-    private float speed_frog = 0.35f;
+    [SerializeField] private float speed_frog = 0.85f;
 
+    [SerializeField] private float jumpForce = 350f;
+    [SerializeField] private LayerMask layer_frog;
     //Coroutine fields
     [SerializeField] private LayerMask ground;
     private Vector3 m_Velocity = Vector3.zero;
     private static readonly System.Random getrandom = new System.Random();
-   
+
     private int GetRandomNumber(int min, int max)
     {
         lock (getrandom) // synchronize
@@ -68,7 +70,7 @@ public class Frog_Movement : Enemy_Movement
         {
             currentlyJumping = true;
             anim.SetBool("isJumping", true);
-            Vector3 targetVelocity = new Vector2(speed_frog *Time.deltaTime* 200f, rig_body.velocity.y + 3f);
+            Vector3 targetVelocity = new Vector2(speed_frog *Time.deltaTime* jumpForce, rig_body.velocity.y + 3f);
             rig_body.velocity = Vector3.Lerp(rig_body.velocity, targetVelocity,1f);
             jump = false;
         }
@@ -81,7 +83,7 @@ public class Frog_Movement : Enemy_Movement
         sprite = GetComponent<SpriteRenderer>();
         rig_body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
+        Physics2D.IgnoreLayerCollision(9,9, true);
         base.Start();
         
     }
@@ -93,8 +95,11 @@ public class Frog_Movement : Enemy_Movement
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        speed_frog = -speed_frog;
-        sprite.flipX = !sprite.flipX;
+        if (collision.gameObject.CompareTag("Waypoint"))
+        {
+            speed_frog = -speed_frog;
+            sprite.flipX = !sprite.flipX;
+        }
     }
 
     public override void Die()

@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7400419247522135106}
   - component: {fileID: 8384136434723891574}
   - component: {fileID: 8427837969541535710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -213,6 +213,11 @@ MonoBehaviour:
   - {fileID: 567646339353756938}
   speed: 1.5
   frogSound: {fileID: 8427837969541535710}
+  speed_frog: 0.3
+  jumpForce: 500
+  layer_frog:
+    serializedVersion: 2
+    m_Bits: 512
   ground:
     serializedVersion: 2
     m_Bits: 256

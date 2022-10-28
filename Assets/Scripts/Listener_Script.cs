@@ -20,15 +20,15 @@ public class Listener_Script: MonoBehaviour
                 if (isStart)
                 {
                     Invoke("Start_Game", 1f);
-                    text.GetComponent<Text>().text = "Let's go";
+                    text.GetComponent<Text>().text = "Let's go !!!";
                 }
                 else
                 {
-                    Invoke("Quit", 1f);
+                    Invoke("Quit", 3f);
                     text.GetComponent<Text>().text = "Bye!";
                     text.GetComponent<Text>().fontSize = 30;
-                    Vector3 oldPosition = text.GetComponent<RectTransform>().transform.position.;
-                    text.GetComponent<RectTransform>().transform.position.Set(oldPosition.x,-229.3f,0f);
+                    Vector3 oldPosition = text.GetComponent<RectTransform>().transform.position;
+                    text.GetComponent<RectTransform>().transform.position = new Vector3(oldPosition.x,oldPosition.y - 20f,0f);
                 }
             }
         }

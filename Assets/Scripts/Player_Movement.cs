@@ -94,17 +94,11 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Trap"))
-        {
-            //Trigger death
-            Die();
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Death"))
+        if (collision.gameObject.CompareTag("Death") || collision.gameObject.CompareTag("Trap"))
         {
             Die();
         }
