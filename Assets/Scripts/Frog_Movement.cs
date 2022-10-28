@@ -106,7 +106,7 @@ public class Frog_Movement : Enemy_Movement
     {
         rig_body.bodyType = RigidbodyType2D.Static;
         frogSound.Play();
-        base.Die();
+        base.Die();    
     }
 
 }

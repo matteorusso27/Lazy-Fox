@@ -22,6 +22,8 @@ public class Player_Movement : MonoBehaviour
     private bool isCrouching = false;
     private bool isFalling = false;
 
+    public bool isLevelCompleted;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -106,16 +108,19 @@ public class Player_Movement : MonoBehaviour
 
     private void Die()
     {
-       
-        animator.SetBool("isDead", true);
-        boxCollider.enabled = false;
-        circleCollider.enabled = false;
-        rig_body.AddForce(new Vector2(0, 500));
-        vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
+        if (!isLevelCompleted)
+        {
+            animator.SetBool("isDead", true);
+            boxCollider.enabled = false;
+            circleCollider.enabled = false;
+            rig_body.AddForce(new Vector2(0, 500));
+            vcamera.GetComponent<CinemachineVirtualCamera>().Follow = null;
+
+            audioDeath.Play();
+            Invoke("RestartLevel", 2);
+            GetComponent<Player_Movement>().enabled = false;
+        }
         
-        audioDeath.Play();
-        Invoke("RestartLevel", 2);
-        GetComponent<Player_Movement>().enabled = false;
     }
 
     private void RestartLevel()
