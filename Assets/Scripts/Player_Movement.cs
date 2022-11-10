@@ -110,6 +110,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (!isLevelCompleted)
         {
+            rig_body.velocity = Vector3.zero;
             animator.SetBool("isDead", true);
             boxCollider.enabled = false;
             circleCollider.enabled = false;
